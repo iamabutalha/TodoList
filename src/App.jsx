@@ -6,13 +6,11 @@ import TodoItem from "./components/TodoItem";
 
 function App() {
   const [todos, setTodos] = useState([]);
-
   // The three dots return an arry it is called spread operator mean all the other thing except the id return them👇🏽👇🏽
   // The setTodos take a callback because if we directly put setTodos(todo) it will destory all the other values so we will use spread operators to achieve the previous values also in the todo🢃🧠🧠
   const addTodo = (todo) => {
     setTodos((prev) => [{ id: Date.now(), ...todo }, ...prev]);
   };
-
   // The update todo will check the prevTodo.id which is id in the add to do with the local id if exist it will return todo other wise it will return prevTodo👇🏽🧠
   const updateTodo = (id, todo) => {
     setTodos((prev) =>
